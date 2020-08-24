@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+
+<mapper namespace="com.magichour.mapper.MainMapper">
+	<select id="mainCalendarList" parameterType="java.lang.String" resultType="CalendarDto">
+		SELECT 
+			CAL_SEQ,
+			CAL_DATE,
+			CAL_TIME,
+			CAL_SUBJECT,
+			CAL_CONTENT,
+			CAL_WRITER,
+			CAL_CREATE_DATE
+		FROM 
+			mh_calendar
+		ORDER BY CAL_DATE ASC
+		LIMIT 3
+	</select>
+</mapper>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+
+<mapper namespace="com.magichour.mapper.BoardMapper">
+	<select id="getBoardList" parameterType="BoardDto" resultType="BoardDto">
+		SELECT 
+			BOARD_SEQ,
+			BOARD_DATE,
+			BOARD_SUBJECT,
+			BOARD_CONTENT,
+			BOARD_WRITER
+		FROM 
+			mh_board
+		ORDER BY BOARD_SEQ DESC
+		LIMIT 15
+	</select>
+</mapper>

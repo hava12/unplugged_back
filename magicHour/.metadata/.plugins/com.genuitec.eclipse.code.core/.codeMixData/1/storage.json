@@ -1,0 +1,14 @@
+{
+    "telemetry.machineId": "b4796b9ba6eaad5b045491bd11b86103d5c28571b4916aeaec5bae2265c6ea08",
+    "openedPathsList": {
+        "workspaces3": [
+            {
+                "id": "e88a5eb266a604d4b04f09b852871cd6",
+                "configURIPath": "file:///c%3A/springBootProject/workspace/magicHour/.metadata/codemix.code-workspace"
+            }
+        ],
+        "files2": []
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#221a0f"
+}

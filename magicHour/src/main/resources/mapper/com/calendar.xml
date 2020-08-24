@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+
+<mapper namespace="com.magichour.mapper.CalendarMapper">
+	<select id="calendarList" parameterType="java.lang.String" resultType="CalendarDto">
+		SELECT 
+			CAL_SEQ,
+			CAL_DATE,
+			CAL_TIME,
+			CAL_SUBJECT,
+			CAL_CONTENT,
+			CAL_WRITER,
+			CAL_CREATE_DATE
+		FROM 
+			mh_calendar
+		WHERE
+			CAL_DATE = #{calDate}
+		LIMIT 1
+	</select>
+	
+	<insert id="insertCalendar" parameterType="CalendarDto" >
+		INSERT INTO mh_calendar (
+			CAL_DATE,
+			CAL_TIME,
+			CAL_SUBJECT,
+			CAL_CONTENT,
+			CAL_WRITER,
+			CAL_CREATE_DATE
+		) VALUES (
+			#{calDate},
+			concat(#{calTime}, #{calMinute}),
+			#{calSubject},
+			#{calContent},
+			'writer',
+			now()
+		)
+	</insert>
+	<delete id="deleteCalendar" parameterType="java.lang.String">
+		DELETE FROM mh_calendar WHERE CAL_SEQ = #{calSeq};
+	</delete>
+</mapper>
